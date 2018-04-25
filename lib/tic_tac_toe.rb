@@ -66,32 +66,32 @@ WIN_COMBINATIONS = [
     player
   end
   
-  def full?(board)
-  board.none? { |value| value == " " }
-end
+  def full?
+  @board.none? { |value| value == " " }
+  end
   
-def draw?(board)
-  status = ""
-  if won?(board) == false && full?(board) == true
-      status = true
-    else 
-     status = false
+  def draw?
+    status = ""
+    if won? == false && full? == true
+        status = true
+      else 
+       status = false
+     end
+     status
    end
-   status
- end
     
-def over?(board)
-  status = false
-  if won?(board) != false || draw?(board) == true || full?(board) == true
-      status = true
+  def over?
+    status = false
+    if won? != false || draw? == true || full? == true
+        status = true
+    end
+    status
   end
-  status
-end
 
-def winner(board)
-  if won?(board) != false
-    board[won?(board)[0]]
+  def winner
+    if won? != false
+    @board[won?(board)[0]]
+    end
   end
-end
 
 end
