@@ -65,5 +65,33 @@ WIN_COMBINATIONS = [
     turn_count.even? ? player = "X" : player = "O"
     player
   end
+  
+  def full?(board)
+  board.none? { |value| value == " " }
+end
+  
+def draw?(board)
+  status = ""
+  if won?(board) == false && full?(board) == true
+      status = true
+    else 
+     status = false
+   end
+   status
+ end
+    
+def over?(board)
+  status = false
+  if won?(board) != false || draw?(board) == true || full?(board) == true
+      status = true
+  end
+  status
+end
+
+def winner(board)
+  if won?(board) != false
+    board[won?(board)[0]]
+  end
+end
 
 end
