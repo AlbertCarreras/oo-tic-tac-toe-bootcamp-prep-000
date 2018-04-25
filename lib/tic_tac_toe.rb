@@ -50,5 +50,16 @@ WIN_COMBINATIONS = [
       turn
     end
   end
-
+  
+  def turn_count
+    counter = 0
+    @board.each do |board_element|
+      if ("#{board_element}" == "X" || "#{board_element}" == "O")
+        counter += 1
+      end
+    end
+    counter
+  end
+  
+  
 end
