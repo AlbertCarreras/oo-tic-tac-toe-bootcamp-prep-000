@@ -61,5 +61,9 @@ WIN_COMBINATIONS = [
     counter
   end
   
-  
+  def current_player
+    turn_count.even? ? player = "X" : player = "O"
+    player
+  end
+
 end
