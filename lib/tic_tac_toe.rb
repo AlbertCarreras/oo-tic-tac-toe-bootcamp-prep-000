@@ -93,5 +93,16 @@ WIN_COMBINATIONS = [
       @board[won?[0]]
     end
   end
+  
+  def play
+  while over? == false
+    turn
+  end
+  if won? != false
+    puts "Congratulations #{winner}!"
+  elsif draw? == true
+    puts "Cat's Game!"
+  end
+  end
 
 end
